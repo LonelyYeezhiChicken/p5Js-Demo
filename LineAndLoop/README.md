@@ -1,4 +1,4 @@
-# 線條與迴圈
+# 1. 線條與迴圈
 使用四個迴圈分別畫出四個區塊的橫線與直線
 
 ### 最終結果
@@ -38,7 +38,7 @@
 
  ```javaScript
   for (let i = 1; i <= 20; i++) {
-        fill(300);
+        fill(250);
         line(i * 10, height / 2, i * 10, 0);
       }
 ```
@@ -50,7 +50,7 @@
 
  ```javaScript
    for (let i = 1; i <= 20; i++) {
-        fill(300);
+        fill(250);
         line(width / 2, i * 10, width, i * 10);
       }
 ```
@@ -62,7 +62,7 @@
 
  ```javaScript
    for (let i = 1; i <= 20; i++) {
-        fill(300);
+        fill(250);
         line(0, height - (i * 10), width / 2, height - (i * 10));
       }
 ```
@@ -74,7 +74,9 @@
 
  ```javaScript
    for (let i = 1; i <= 20; i++) {
-        fill(300);
+        fill(250);
         line(width - (i * 10), height, width - (i * 10), height / 2);
       }
 ```
+
+[回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
