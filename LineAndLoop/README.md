@@ -2,10 +2,12 @@
 使用四個迴圈分別畫出四個區塊的橫線與直線
 
 ### 最終結果
-![image](https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/LineAndLoop/Line.png)
+[結果連結](https://linduke-lin.github.io/p5Js-Demo/LineAndLoop/LineAndLoop.html)
+<img src="https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/LineAndLoop/Line.png" width="200px" height="200px">
 
 ### 圖表座標
-![image](https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/LineAndLoop/LineXY.png)
+<img src="https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/LineAndLoop/LineXY.png" width="400px" height="400px">
+
 
 ### 定義畫布
 - 使用變數宣告方式，分別宣告 width(寬度),height(高度)
