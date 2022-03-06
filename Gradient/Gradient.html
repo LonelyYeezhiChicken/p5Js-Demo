@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Gradient Demo</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        function setup() {
+            createCanvas(800, 600);
+        }
+
+        function draw() {
+            //先將寬度除以5，分辨到哪個位置為一個區塊
+            let linePosition = width / 5;
+
+            for (let position = 0; position < 5; position++) {
+                for (let i = 0; i < height; i++) {
+                    let resAmount = map(i, 0, height, position * 30, 255);
+                    stroke(resAmount, 100, 200);
+                    line(linePosition * position, i, linePosition * (position + 1), i);
+                }
+            }
+            noLoop();
+        }
+
+    </script>
+</body>
+
+</html>
