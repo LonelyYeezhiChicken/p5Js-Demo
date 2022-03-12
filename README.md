@@ -7,3 +7,5 @@ p5js Demo
     - [試一試](https://linduke-lin.github.io/p5Js-Demo/Method-map/MapDemo.html)
 3. [區塊漸層](https://github.com/LINDuke-Lin/p5Js-Demo/tree/main/Gradient)
     - [成品](https://linduke-lin.github.io/p5Js-Demo/Gradient/Gradient.html)
+4. [聲波](https://github.com/LINDuke-Lin/p5Js-Demo/tree/main/Wave)
+    - [成品](https://linduke-lin.github.io/p5Js-Demo/Wave/SoundWave.html)
