@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Wave</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <title>Gradient Demo</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //角度
+        let angle = 0.0;
+        //圓的半徑
+        let radius = 20;
+        function setup() {
+            createCanvas(800, 800);
+            //移除輪廓
+            noStroke();
+            fill(255);
+            //設定為半徑為圓心
+            ellipseMode(RADIUS);
+        }
+
+        function draw() {
+            background(0);
+            //畫25個圓
+            for (let i = 0; i < 25; i++) {
+                //計算圓新的x軸
+                let x = map(i, 0, 24, radius, width);
+                //計算圓的y軸 
+                let y = map(sin(angle + frameCount), -1, 1, radius, height);
+                //畫圓
+                circle(x, y, radius);
+
+                angle += TWO_PI / 8.75;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
