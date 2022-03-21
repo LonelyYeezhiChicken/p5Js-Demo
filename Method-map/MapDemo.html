@@ -63,8 +63,8 @@
         let mapValChangStr = document.getElementById("mapValChangStr").value;
         let mapValChangEnd = document.getElementById("mapValChangEnd").value;
         //轉換為map
-        let mapOutput = map(mapVal, mapValStr, mapValEnd, mapValChangStr, mapValChangEnd);
-        document.getElementById("mapMethod1").innerHTML = `Map 過程 :  map( ${mapVal} ,${mapValStr}, ${mapValEnd}, ${mapValChangStr}, ${mapValChangEnd})`;
+        let mapOutput = map(mapVal, mapValStr, mapValEnd,  mapValChangEnd, mapValChangStr);
+        document.getElementById("mapMethod1").innerHTML = `Map 過程 :  map( ${mapVal} ,${mapValStr}, ${mapValEnd}, ${mapValChangEnd}, ${mapValChangStr})`;
         document.getElementById("mapOutput1").innerHTML = "Map 後結果 : " + mapOutput;
     }, false);
 </script>
