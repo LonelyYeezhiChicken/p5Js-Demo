@@ -56,15 +56,15 @@
     document.getElementById("mapClick1").addEventListener("click", function submitButton() {
         console.log('嗨');
         //取得輸入的Map
-        let mapVal = document.getElementById("mapVal1").value;
+        let mapVal = parseInt(document.getElementById("mapVal1").value);
         //取得調整的範圍
-        let mapValStr = document.getElementById("mapValStr").value;
-        let mapValEnd = document.getElementById("mapValEnd").value;
-        let mapValChangStr = document.getElementById("mapValChangStr").value;
-        let mapValChangEnd = document.getElementById("mapValChangEnd").value;
+        let mapValStr = parseInt(document.getElementById("mapValStr").value);
+        let mapValEnd = parseInt(document.getElementById("mapValEnd").value);
+        let mapValChangStr = parseInt(document.getElementById("mapValChangStr").value);
+        let mapValChangEnd = parseInt(document.getElementById("mapValChangEnd").value);
         //轉換為map
-        let mapOutput = map(mapVal, mapValStr, mapValEnd,  mapValChangEnd, mapValChangStr);
-        document.getElementById("mapMethod1").innerHTML = `Map 過程 :  map( ${mapVal} ,${mapValStr}, ${mapValEnd}, ${mapValChangEnd}, ${mapValChangStr})`;
+        let mapOutput = map(mapVal, mapValStr, mapValEnd, mapValChangStr, mapValChangEnd);
+        document.getElementById("mapMethod1").innerHTML = `Map 過程 :  map( ${mapVal} ,${mapValStr}, ${mapValEnd}, ${mapValChangStr}, ${mapValChangEnd})`;
         document.getElementById("mapOutput1").innerHTML = "Map 後結果 : " + mapOutput;
     }, false);
 </script>
