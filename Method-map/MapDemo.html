@@ -8,6 +8,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
     <title>Map Demo</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,13 +46,56 @@
 
     <div id="mapMethod1" style="color:gray"></div>
     <div id="mapOutput1" style="color:gray"></div>
+    <hr>
+    <h3>3. 透過 map 畫同心圓</h3>
+    <label style="color:gray">輸入小圓的半徑: </label>
+    <input id="mapVal2" type="number" value="10">
+    <br>
+    <label style="color:gray">輸入小圓的半徑最小到最大值: </label>
+    <input id="mapValStr1" style="width: 50px;" type="number" value="0"> ~ <input id="mapValEnd1" style="width: 50px;"
+        type="number" value="10">
+    <br>
+    <label style="color:gray">輸入大圓縮放範圍的區間: </label>
+    <input id="mapValChangStr1" style="width: 50px;" type="number" value="0"> ~ <input id="mapValChangEnd1"
+        style="width: 50px;" type="number" value="100">
+    <br>
+    <input id="mapClick2" style="color:white;background-color: green;" type="button" value="送出">
+
+    <div id="mapMethod2" style="color:gray"></div>
+    <div id="mapOutput2" style="color:gray"></div>
 </body>
 
 <script>
+    //小圓半徑
+    let r = 10;
+
+    let mapValStrSm = 0;
+    let mapValEndSm = 10;
+    let mapValChangStrLa = 0;
+    let mapValChangEndLa = 20;
+
+    let isChang = false;
+
     function setup() {
         let width = 400;
         let height = 400;
         createCanvas(width, height);
+        background(0);
+    }
+
+    function draw() {
+        if (isChang) {
+            drawingContext.clearRect(0, 0, width, height);
+            background(0);
+            isChang = true;
+        }
+        noFill();
+        stroke(255);
+        ellipse(200, 200, r);
+
+        let bigR = map(r, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
+        ellipse(200, 200, bigR);
+
     }
 
     document.getElementById("mapClick").addEventListener("click", function submitButton() {
@@ -54,7 +108,6 @@
     }, false);
 
     document.getElementById("mapClick1").addEventListener("click", function submitButton() {
-        console.log('嗨');
         //取得輸入的Map
         let mapVal = parseInt(document.getElementById("mapVal1").value);
         //取得調整的範圍
@@ -66,6 +119,21 @@
         let mapOutput = map(mapVal, mapValStr, mapValEnd, mapValChangStr, mapValChangEnd);
         document.getElementById("mapMethod1").innerHTML = `Map 過程 :  map( ${mapVal} ,${mapValStr}, ${mapValEnd}, ${mapValChangStr}, ${mapValChangEnd})`;
         document.getElementById("mapOutput1").innerHTML = "Map 後結果 : " + mapOutput;
+    }, false);
+
+    document.getElementById("mapClick2").addEventListener("click", function submitButton() {
+        //取得輸入的Map
+        let r = parseInt(document.getElementById("mapVal2").value);
+        //取得調整的範圍
+        mapValStrSm = parseInt(document.getElementById("mapValStr1").value);
+        mapValEndSm = parseInt(document.getElementById("mapValEnd1").value);
+        mapValChangStrLa = parseInt(document.getElementById("mapValChangStr1").value);
+        mapValChangEndLa = parseInt(document.getElementById("mapValChangEnd1").value);
+        //轉換為map
+        let mapOutput = map(r, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
+        document.getElementById("mapMethod2").innerHTML = `Map 過程 :  map( ${r} ,${mapValStrSm}, ${mapValEndSm}, ${mapValChangStrLa}, ${mapValChangEndLa})`;
+        document.getElementById("mapOutput2").innerHTML = `小圓半徑 : ${r}, 大圓半徑 : ${mapOutput}`;
+        isChang = true;
     }, false);
 </script>
 
