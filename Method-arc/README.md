@@ -2,6 +2,7 @@
 
 ### 關於arc函式
 - [官網連結](https://p5js.org/reference/#/p5/arc)
+-  [成品-open model](https://linduke-lin.github.io/p5Js-Demo/Method-arc/ArcDemo-Open.html)
 
 ### 說明:
 - 用途 : 在螢幕上畫一條 `弧線`
@@ -28,5 +29,7 @@
 // 從點(100, 150) 開始，劃出 200 x 200 的開放式半圓
 arc(100, 150, 200, 200, 0, 10, OPEN);
 ```
+- 結果 : 
+<img src="https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/Method-arc/img/open.png" width="400px" height="400px">
 
 [回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
