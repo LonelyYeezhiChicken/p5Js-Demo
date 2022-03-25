@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <title>Map Demo</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>1. 輸入參數透過 map 換算</h3>
+    <label style="color:gray">輸入Map的參數: </label>
+    <input id="mapVal" style="width: 50px;" type="number" value="1">
+    <input id="mapClick" style="color:white;background-color: green;" type="button" value="送出">
+
+    <div id="mapMethod" style="color:gray"></div>
+    <div id="mapOutput" style="color:gray"></div>
+    <hr>
+    <h3>2. 輸入參數，並調整數字區間，透過 map 換算</h3>
+    <label style="color:gray">輸入Map的參數: </label>
+    <input id="mapVal1" type="number" value="1">
+    <br>
+    <label style="color:gray">輸入原始範圍的區間: </label>
+    <input id="mapValStr" style="width: 50px;" type="number" value="0"> ~ <input id="mapValEnd" style="width: 50px;"
+        type="number" value="10">
+    <br>
+    <label style="color:gray">輸入縮放範圍的區間: </label>
+    <input id="mapValChangStr" style="width: 50px;" type="number" value="0"> ~ <input id="mapValChangEnd"
+        style="width: 50px;" type="number" value="100">
+    <br>
+    <input id="mapClick1" style="color:white;background-color: green;" type="button" value="送出">
+
+    <div id="mapMethod1" style="color:gray"></div>
+    <div id="mapOutput1" style="color:gray"></div>
+    <hr>
+    <h3>3. 透過 map 畫同心圓</h3>
+    <label style="color:gray">輸入小圓的半徑: </label>
+    <input id="mapVal2" type="number" value="10">
+    <br>
+    <label style="color:gray">輸入小圓的半徑最小到最大值: </label>
+    <input id="mapValStr1" style="width: 50px;" type="number" value="0"> ~ <input id="mapValEnd1" style="width: 50px;"
+        type="number" value="10">
+    <br>
+    <label style="color:gray">輸入大圓縮放範圍的區間: </label>
+    <input id="mapValChangStr1" style="width: 50px;" type="number" value="0"> ~ <input id="mapValChangEnd1"
+        style="width: 50px;" type="number" value="100">
+    <br>
+    <input id="mapClick2" style="color:white;background-color: green;" type="button" value="送出">
+
+    <div id="mapMethod2" style="color:gray"></div>
+    <div id="mapOutput2" style="color:gray"></div>
+</body>
+
+<script>
+    //小圓半徑
+    let r = 10;
+
+    let mapValStrSm = 0;
+    let mapValEndSm = 10;
+    let mapValChangStrLa = 0;
+    let mapValChangEndLa = 20;
+
+    let isChang = false;
+
+    function setup() {
+        let width = 400;
+        let height = 400;
+        createCanvas(width, height);
+        background(0);
+    }
+
+    function draw() {
+        if (isChang) {
+            drawingContext.clearRect(0, 0, width, height);
+            background(0);
+            isChang = true;
+        }
+        noFill();
+        stroke(255);
+        ellipse(200, 200, r);
+
+        let bigR = map(r, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
+        ellipse(200, 200, bigR);
+
+    }
+
+    document.getElementById("mapClick").addEventListener("click", function submitButton() {
+        //取得輸入的Map
+        let mapVal = document.getElementById("mapVal").value;
+        //轉換為map
+        let mapOutput = map(mapVal, 0, 10, 0, 100);
+        document.getElementById("mapMethod").innerHTML = "Map 過程 :  map(" + mapVal + ", 0, 10, 0, 100)";
+        document.getElementById("mapOutput").innerHTML = "Map 後結果 : " + mapOutput;
+    }, false);
+
+    document.getElementById("mapClick1").addEventListener("click", function submitButton() {
+        //取得輸入的Map
+        let mapVal = parseInt(document.getElementById("mapVal1").value);
+        //取得調整的範圍
+        let mapValStr = parseInt(document.getElementById("mapValStr").value);
+        let mapValEnd = parseInt(document.getElementById("mapValEnd").value);
+        let mapValChangStr = parseInt(document.getElementById("mapValChangStr").value);
+        let mapValChangEnd = parseInt(document.getElementById("mapValChangEnd").value);
+        //轉換為map
+        let mapOutput = map(mapVal, mapValStr, mapValEnd, mapValChangStr, mapValChangEnd);
+        document.getElementById("mapMethod1").innerHTML = `Map 過程 :  map( ${mapVal} ,${mapValStr}, ${mapValEnd}, ${mapValChangStr}, ${mapValChangEnd})`;
+        document.getElementById("mapOutput1").innerHTML = "Map 後結果 : " + mapOutput;
+    }, false);
+
+    document.getElementById("mapClick2").addEventListener("click", function submitButton() {
+        //取得輸入的Map
+        let r = parseInt(document.getElementById("mapVal2").value);
+        //取得調整的範圍
+        mapValStrSm = parseInt(document.getElementById("mapValStr1").value);
+        mapValEndSm = parseInt(document.getElementById("mapValEnd1").value);
+        mapValChangStrLa = parseInt(document.getElementById("mapValChangStr1").value);
+        mapValChangEndLa = parseInt(document.getElementById("mapValChangEnd1").value);
+        //轉換為map
+        let mapOutput = map(r, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
+        document.getElementById("mapMethod2").innerHTML = `Map 過程 :  map( ${r} ,${mapValStrSm}, ${mapValEndSm}, ${mapValChangStrLa}, ${mapValChangEndLa})`;
+        document.getElementById("mapOutput2").innerHTML = `小圓半徑 : ${r}, 大圓半徑 : ${mapOutput}`;
+        isChang = true;
+    }, false);
+</script>
+
+</html>
