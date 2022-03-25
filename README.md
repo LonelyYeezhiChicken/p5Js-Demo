@@ -9,3 +9,4 @@ p5js Demo
     - [成品](https://linduke-lin.github.io/p5Js-Demo/Gradient/Gradient.html)
 4. [聲波](https://github.com/LINDuke-Lin/p5Js-Demo/tree/main/Wave)
     - [成品](https://linduke-lin.github.io/p5Js-Demo/Wave/SoundWave.html)
+5. [arc 函式](https://github.com/LINDuke-Lin/p5Js-Demo/tree/main/Method-arc)
