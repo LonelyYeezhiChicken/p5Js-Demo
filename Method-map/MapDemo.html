@@ -73,7 +73,8 @@
     let mapValEndSm = 10;
     let mapValChangStrLa = 0;
     let mapValChangEndLa = 20;
-
+    let mapIn = 0;
+    let mapOutput = 0;
     let isChang = false;
 
     function setup() {
@@ -87,15 +88,14 @@
         if (isChang) {
             drawingContext.clearRect(0, 0, width, height);
             background(0);
-            isChang = true;
+            isChang = false;
         }
         noFill();
         stroke(255);
-        ellipse(200, 200, r);
+        ellipse(200, 200, mapIn);
 
-        let bigR = map(r, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
-        ellipse(200, 200, bigR);
-
+        mapOutput = map(mapIn, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
+        ellipse(200, 200, mapOutput);
     }
 
     document.getElementById("mapClick").addEventListener("click", function submitButton() {
@@ -123,16 +123,16 @@
 
     document.getElementById("mapClick2").addEventListener("click", function submitButton() {
         //取得輸入的Map
-        let r = parseInt(document.getElementById("mapVal2").value);
+        mapIn = parseInt(document.getElementById("mapVal2").value);
         //取得調整的範圍
         mapValStrSm = parseInt(document.getElementById("mapValStr1").value);
         mapValEndSm = parseInt(document.getElementById("mapValEnd1").value);
         mapValChangStrLa = parseInt(document.getElementById("mapValChangStr1").value);
         mapValChangEndLa = parseInt(document.getElementById("mapValChangEnd1").value);
         //轉換為map
-        let mapOutput = map(r, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
-        document.getElementById("mapMethod2").innerHTML = `Map 過程 :  map( ${r} ,${mapValStrSm}, ${mapValEndSm}, ${mapValChangStrLa}, ${mapValChangEndLa})`;
-        document.getElementById("mapOutput2").innerHTML = `小圓半徑 : ${r}, 大圓半徑 : ${mapOutput}`;
+        mapOutput = map(mapIn, mapValStrSm, mapValEndSm, mapValChangStrLa, mapValChangEndLa);
+        document.getElementById("mapMethod2").innerHTML = `Map 過程 :  map( ${mapIn} ,${mapValStrSm}, ${mapValEndSm}, ${mapValChangStrLa}, ${mapValChangEndLa})`;
+        document.getElementById("mapOutput2").innerHTML = `小圓半徑 : ${mapIn}, 大圓半徑 : ${mapOutput}`;
         isChang = true;
     }, false);
 </script>
