@@ -1,7 +1,7 @@
 # 3. 區塊漸層 
 
 ### 最終結果
-[結果連結](https://linduke-lin.github.io/p5Js-Demo/Gradient/Gradient.html)
+[結果連結](https://lonelyyeezhichicken.github.io/p5Js-Demo/Gradient/Gradient.html)
 
 <img src="https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/Gradient/Gradient.png" width="200px" height="200px">
 
@@ -97,4 +97,4 @@ line(linePosition * position, i, linePosition * (position + 1), i);
 ```
 
 
-[回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
+[回首頁](https://github.com/lonelyyeezhichicken/p5Js-Demo)
