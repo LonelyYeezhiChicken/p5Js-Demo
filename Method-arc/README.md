@@ -2,9 +2,9 @@
 
 ### 關於arc函式
 - [官網連結](https://p5js.org/reference/#/p5/arc)
--  [成品-open mode](https://linduke-lin.github.io/p5Js-Demo/Method-arc/ArcDemo-Open.html)
--  [成品-chord mode](https://linduke-lin.github.io/p5Js-Demo/Method-arc/ArcDemo-Chord.html)
--  [成品-pie mode](https://linduke-lin.github.io/p5Js-Demo/Method-arc/ArcDemo-Pie.html)
+-  [成品-open mode](https://lonelyyeezhichicken.github.io/p5Js-Demo/Method-arc/ArcDemo-Open.html)
+-  [成品-chord mode](https://lonelyyeezhichicken.github.io/p5Js-Demo/Method-arc/ArcDemo-Chord.html)
+-  [成品-pie mode](https://lonelyyeezhichicken.github.io/p5Js-Demo/Method-arc/ArcDemo-Pie.html)
 
 ### 說明:
 - 用途 : 在螢幕上畫一條 `弧線`
@@ -54,4 +54,4 @@ arc(100, 150, 200, 200, 0, 10, PIE);
 <img src="https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/Method-arc/img/pie.png" width="200px" height="200px">
 
 
-[回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
+[回首頁](https://github.com/lonelyyeezhichicken/p5Js-Demo)
