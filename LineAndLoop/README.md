@@ -2,7 +2,7 @@
 使用四個迴圈分別畫出四個區塊的橫線與直線
 
 ### 最終結果
-[結果連結](https://linduke-lin.github.io/p5Js-Demo/LineAndLoop/LineAndLoop.html)
+[結果連結](https://lonelyyeezhichicken.github.io/p5Js-Demo/LineAndLoop/LineAndLoop.html)
 
 <img src="https://github.com/LINDuke-Lin/p5Js-Demo/blob/main/LineAndLoop/Line.png" width="200px" height="200px">
 
@@ -82,4 +82,4 @@
       }
 ```
 
-[回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
+[回首頁](https://github.com/lonelyyeezhichicken/p5Js-Demo)
