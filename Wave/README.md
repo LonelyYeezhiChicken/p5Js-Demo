@@ -2,7 +2,7 @@
 使用圓型，x軸不變，y軸上下移動組成聲波
 
 ### 最終結果
-[結果連結](https://linduke-lin.github.io/p5Js-Demo/Wave/SoundWave.html)
+[結果連結](https://lonelyyeezhichicken.github.io/p5Js-Demo/Wave/SoundWave.html)
 
 ### 變數宣告
 - 分別宣告 ； 
@@ -45,4 +45,4 @@
 ```
 
 
-[回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
+[回首頁](https://github.com/lonelyyeezhichicken/p5Js-Demo)
