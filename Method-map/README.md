@@ -2,7 +2,7 @@
 
 ### 關於map函式
 - [官網連結](https://p5js.org/reference/#/p5/map)
-- [試一試](https://linduke-lin.github.io/p5Js-Demo/Method-map/MapDemo.html)
+- [試一試](https://lonelyyeezhichicken.github.io/p5Js-Demo/Method-map/MapDemo.html)
 
 ### 說明:
 - map 首先需要設定原始參數的範圍
@@ -19,4 +19,4 @@
 - `0~10`變成`0~100`則需要乘以10倍
 - 因此我們需要縮放的`1`通過map函式的計算後，會變成`10`
 
-[回首頁](https://github.com/LINDuke-Lin/p5Js-Demo)
+[回首頁](https://github.com/lonelyyeezhichicken/p5Js-Demo)
